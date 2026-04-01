@@ -1,3 +1,5 @@
+using HSAps.Data;
+using HSAps.Interfaces;
 using HSAps.Models;
 using Microsoft.OpenApi.Models;
 
@@ -11,6 +13,7 @@ List<DashBoardDefinition> ddf = builder.Configuration.GetSection("DashBoard").Ge
 IConfiguration configuration = builder.Configuration;
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+builder.Services.AddScoped<IDashBoard, DashBoardDL>();
 builder.Services.AddCors(op => op.AddPolicy("AllowAll", policy =>
 {
     policy.AllowAnyMethod()
