@@ -35,7 +35,18 @@ namespace HSAps.Business
                         PostLikes = likes,
                     });
                 });
-                return padc;
+                return padc.OrderByDescending(x => x.Id).ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public MktPost SetNewPost(MktPost post)
+        {
+            try
+            {
+                return _dsh.SetNewPost(post);
             }
             catch
             {

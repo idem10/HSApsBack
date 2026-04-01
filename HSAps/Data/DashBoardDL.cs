@@ -58,5 +58,37 @@ namespace HSAps.Data
                 throw;
             }
         }
+        //
+        public MktPost SetNewPost(MktPost post)
+        {
+            try
+            {
+                var qry = _mkt.MktPosts
+                                .Where(x => x.Id == post.Id)
+                                    .FirstOrDefault();
+                using (var insupt = _mkt)
+                {
+                    if (qry == null)
+                    {
+                        insupt.MktPosts.Add(post);
+                    }
+                    else
+                    {
+                        qry.Contenido = post.Contenido;
+                        qry.Imagen = post.Imagen;
+                        qry.VideoUrl = post.VideoUrl;
+                        qry.Estatus = post.Estatus;
+                        qry.IsActive = post.IsActive;
+                        qry.Privacidad = post.Privacidad;
+                    }
+                    insupt.SaveChanges();
+                }
+                return post;
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }
