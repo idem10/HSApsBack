@@ -19,5 +19,44 @@ namespace HSAps.Data
                 throw;
             }
         }
+        public MktUser GetUser(int Id)
+        {
+            try
+            {
+                return _mkt.MktUsers
+                                .Where(x => x.Id == Id)
+                                    .FirstOrDefault();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public List<MktComment> GetCommentarios(int Id)
+        {
+            try
+            {
+                return _mkt.MktComments
+                                .Where(x => x.PostId == Id)
+                                    .ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public List<MktPostLike> GetPostLikes(int Id)
+        {
+            try
+            {
+                return _mkt.MktPostLikes
+                                .Where(x => x.PostId == Id)
+                                    .ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }
