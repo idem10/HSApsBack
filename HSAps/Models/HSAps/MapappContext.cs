@@ -17,12 +17,52 @@ public partial class MapappContext : DbContext
     {
     }
 
+    public virtual DbSet<MktComment> MktComments { get; set; }
+
+    public virtual DbSet<MktPost> MktPosts { get; set; }
+
+    public virtual DbSet<MktPostLike> MktPostLikes { get; set; }
+
     public virtual DbSet<MktUser> MktUsers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(con.GetConnectionString("MKT"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<MktComment>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__MKT_Comm__3214EC0795971BE9");
+
+            entity.ToTable("MKT_Comments");
+
+            entity.Property(e => e.FechaCreacion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<MktPost>(entity =>
+        {
+            entity.ToTable("MKT_Post");
+
+            entity.Property(e => e.Contenido).IsUnicode(false);
+            entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
+            entity.Property(e => e.Imagen).IsUnicode(false);
+            entity.Property(e => e.VideoUrl)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<MktPostLike>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__MKT_Post__3214EC07EF30EDEA");
+
+            entity.ToTable("MKT_PostLikes");
+
+            entity.Property(e => e.FechaCreacion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+        });
+
         modelBuilder.Entity<MktUser>(entity =>
         {
             entity.ToTable("MKT_Users");
