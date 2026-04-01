@@ -23,7 +23,7 @@ namespace HSAps.Business
                     {
                         Id = p.Id,
                         UserId = p.UserId,
-                        UserName = _dsh.GetUser(p.Id).UserName,
+                        UserName = _dsh.GetUser(p.UserId)?.UserName,
                         Contenido = p.Contenido,
                         Imagen = p.Imagen,
                         VideoUrl = p.VideoUrl,
