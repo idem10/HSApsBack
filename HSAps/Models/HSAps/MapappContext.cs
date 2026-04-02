@@ -70,6 +70,9 @@ public partial class MapappContext : DbContext
             entity.Property(e => e.Apellidos)
                 .HasMaxLength(200)
                 .IsUnicode(false);
+            entity.Property(e => e.App)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
                 .IsUnicode(false);

@@ -24,4 +24,6 @@ public partial class MktUser
     public string? Imagen { get; set; }
 
     public DateTime LastUpdate { get; set; }
+
+    public string? App { get; set; }
 }
