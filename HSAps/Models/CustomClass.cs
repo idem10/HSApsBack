@@ -36,6 +36,7 @@ namespace HSAps.Models
         public int IsActive { get; set; }
 
         public int Privacidad { get; set; }
+        public string UserImagen { get; set; }
         public List<MktComment> Comentarios { get; set; }
         public List<MktPostLike> PostLikes { get; set; }
     }

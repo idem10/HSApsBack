@@ -55,6 +55,7 @@ namespace HSAps.Business
                         FechaCreacion = p.FechaCreacion,
                         IsActive = p.IsActive,
                         Privacidad = p.Privacidad,
+                        UserImagen = _dsh.GetUser(p.UserId).Imagen,
                         Comentarios = coment,
                         PostLikes = likes,
                     });
