@@ -1,5 +1,6 @@
 ﻿using HSAps.Business;
 using HSAps.Interfaces;
+using HSAps.Models;
 using HSAps.Models.HSAps;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,19 @@ namespace HSAps.Controllers
     {
         private readonly DashBoardBL _dsh;
         public DashBoardController(IDashBoard dsh) => _dsh = new DashBoardBL(dsh);
+        //
+        [HttpPost]
+        public IActionResult GetLogin([FromBody] LoginClass login)
+        {
+            try
+            {
+                return Ok(_dsh.GetLogin(login));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         /// <summary>
         /// 
         /// </summary>

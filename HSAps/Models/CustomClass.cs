@@ -11,6 +11,11 @@ namespace HSAps.Models
         public string ContactName { get; set; }
         public string UrlContactName { get; set; }
     }
+    public class LoginClass
+    {
+        public string User { get; set; }
+        public string Pwd { get; set; }
+    }
     public class PostAllDataClass
     {
         public int Id { get; set; }

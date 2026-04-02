@@ -9,6 +9,19 @@ namespace HSAps.Business
         //
         private readonly IDashBoard _dsh;
         public DashBoardBL(IDashBoard dsh) => _dsh = dsh;
+        //
+        public MktUser GetLogin(LoginClass login)
+        {
+            try
+            {
+                return _dsh.GetLogin(login);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        //
         public List<PostAllDataClass> GetAllPost()
         {
             List<PostAllDataClass> padc = new List<PostAllDataClass>();

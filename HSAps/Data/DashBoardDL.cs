@@ -1,4 +1,5 @@
 ﻿using HSAps.Interfaces;
+using HSAps.Models;
 using HSAps.Models.HSAps;
 
 namespace HSAps.Data
@@ -6,6 +7,24 @@ namespace HSAps.Data
     public class DashBoardDL : IDashBoard
     {
         private readonly MapappContext _mkt = new MapappContext();
+        //login 
+        public MktUser GetLogin(LoginClass login)
+        {
+            try
+            {
+                var usr = _mkt.MktUsers
+                                .Where(x => x.UserName == login.User
+                                    && x.Password == login.Pwd)
+                                    .FirstOrDefault();
+                usr.Password = null;
+                return usr;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        //
         public List<MktPost> GetAllPost()
         {
             try
