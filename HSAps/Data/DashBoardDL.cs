@@ -8,16 +8,33 @@ namespace HSAps.Data
     {
         private readonly MapappContext _mkt = new MapappContext();
         //login 
-        public MktUser GetLogin(LoginClass login)
+        public MktUserClass GetLogin(LoginClass login)
         {
             try
             {
+                MktUserClass u = new MktUserClass();
                 var usr = _mkt.MktUsers
                                 .Where(x => x.UserName == login.User
                                     && x.Password == login.Pwd)
                                     .FirstOrDefault();
-                usr.Password = null;
-                return usr;
+                if (usr != null)
+                {
+                    u.Id = usr.Id;
+                    u.UserName = usr.UserName;
+                    u.Email = usr.Email;
+                    u.Nombre = usr.Nombre;
+                    u.Apellidos = usr.Apellidos;
+                    u.IsActive = usr.IsActive;
+                    u.Rol = usr.Rol;
+                    u.Imagen = usr.Imagen;
+                    u.LastUpdate = usr.LastUpdate;
+                    u.UsuarioExiste = true;
+                }
+                else
+                {
+                    u.UsuarioExiste= false;
+                }
+                return u;
             }
             catch
             {

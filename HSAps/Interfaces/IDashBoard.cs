@@ -6,7 +6,7 @@ namespace HSAps.Interfaces
     public interface IDashBoard
     {
         //
-        MktUser GetLogin(LoginClass login);
+        MktUserClass GetLogin(LoginClass login);
         //
         List<MktPost> GetAllPost();
         MktUser GetUser(int Id);

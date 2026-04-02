@@ -10,7 +10,7 @@ namespace HSAps.Business
         private readonly IDashBoard _dsh;
         public DashBoardBL(IDashBoard dsh) => _dsh = dsh;
         //
-        public MktUser GetLogin(LoginClass login)
+        public MktUserClass GetLogin(LoginClass login)
         {
             try
             {

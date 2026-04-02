@@ -39,4 +39,28 @@ namespace HSAps.Models
         public List<MktComment> Comentarios { get; set; }
         public List<MktPostLike> PostLikes { get; set; }
     }
+    public class MktUserClass
+    {
+        public int Id { get; set; }
+
+        public string UserName { get; set; } = null!;
+
+        public string Email { get; set; } = null!;
+
+        public string Password { get; set; } = null!;
+
+        public string Nombre { get; set; } = null!;
+
+        public string Apellidos { get; set; } = null!;
+
+        public int IsActive { get; set; }
+
+        public int Rol { get; set; }
+
+        public string? Imagen { get; set; }
+
+        public DateTime LastUpdate { get; set; }
+        public bool? UsuarioExiste { get; set; }
+    }
+
 }
