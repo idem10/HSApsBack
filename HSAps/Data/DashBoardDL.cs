@@ -47,8 +47,7 @@ namespace HSAps.Data
             try
             {
                 var qry = _mkt.MktUsers
-                                .Where(x => x.UserName == user.UserName
-                                    && x.Email == user.Email)
+                                .Where(x => x.UserName == user.UserName || x.Email == user.Email)
                                     .FirstOrDefault();
                 using (var insupt = _mkt)
                 {
