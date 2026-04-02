@@ -28,6 +28,18 @@ namespace HSAps.Controllers
                 return BadRequest();
             }
         }
+        [HttpPost]
+        public IActionResult SetNewUser([FromBody] MktUser user)
+        {
+            try
+            {
+                return Ok(_dsh.SetNewUser(user));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         /// <summary>
         /// 
         /// </summary>

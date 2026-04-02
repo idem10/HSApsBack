@@ -33,9 +33,32 @@ namespace HSAps.Data
                 }
                 else
                 {
-                    u.UsuarioExiste= false;
+                    u.UsuarioExiste = false;
                 }
                 return u;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public MktUser SetNewUser(MktUser user)
+        {
+            try
+            {
+                var qry = _mkt.MktUsers
+                                .Where(x => x.UserName == user.UserName
+                                    && x.Email == user.Email)
+                                    .FirstOrDefault();
+                using (var insupt = _mkt)
+                {
+                    if (qry == null)
+                    {
+                        insupt.MktUsers.Add(user);
+                    }
+                    insupt.SaveChanges();
+                }
+                return user;
             }
             catch
             {

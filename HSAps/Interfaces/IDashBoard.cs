@@ -7,6 +7,7 @@ namespace HSAps.Interfaces
     {
         //
         MktUserClass GetLogin(LoginClass login);
+        MktUser SetNewUser(MktUser user);
         //
         List<MktPost> GetAllPost();
         MktUser GetUser(int Id);

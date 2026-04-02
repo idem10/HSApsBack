@@ -21,6 +21,17 @@ namespace HSAps.Business
                 throw;
             }
         }
+        public MktUser SetNewUser(MktUser user)
+        {
+            try
+            {
+                return _dsh.SetNewUser(user);
+            }
+            catch
+            {
+                throw;
+            }
+        }
         //
         public List<PostAllDataClass> GetAllPost()
         {
