@@ -16,7 +16,7 @@ namespace HSAps.Data
                 var usr = _mkt.MktUsers
                                 .Where(x => x.UserName == login.User
                                     && x.Password == login.Pwd
-                                        && x.App == "grill")
+                                        && x.App == login.App)
                                     .FirstOrDefault();
                 if (usr != null)
                 {

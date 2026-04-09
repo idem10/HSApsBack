@@ -15,6 +15,7 @@ namespace HSAps.Models
     {
         public string User { get; set; }
         public string Pwd { get; set; }
+        public string App { get; set; }
     }
     public class PostAllDataClass
     {
