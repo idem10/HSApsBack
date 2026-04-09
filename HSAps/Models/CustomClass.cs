@@ -63,6 +63,11 @@ namespace HSAps.Models
 
         public DateTime LastUpdate { get; set; }
         public bool? UsuarioExiste { get; set; }
+        public string? Matricula { get; set; }
+
+        public string? Grado { get; set; }
+
+        public string? Seccion { get; set; }
     }
 
 }

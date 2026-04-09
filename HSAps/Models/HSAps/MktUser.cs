@@ -26,4 +26,10 @@ public partial class MktUser
     public DateTime LastUpdate { get; set; }
 
     public string? App { get; set; }
+
+    public string? Matricula { get; set; }
+
+    public string? Grado { get; set; }
+
+    public string? Seccion { get; set; }
 }

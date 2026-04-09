@@ -30,6 +30,9 @@ namespace HSAps.Data
                     u.Imagen = usr.Imagen;
                     u.LastUpdate = usr.LastUpdate;
                     u.UsuarioExiste = true;
+                    u.Matricula = usr.Matricula;
+                    u.Grado = usr.Grado;
+                    u.Seccion = usr.Seccion;
                 }
                 else
                 {

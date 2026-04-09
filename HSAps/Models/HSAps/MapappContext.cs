@@ -76,13 +76,22 @@ public partial class MapappContext : DbContext
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+            entity.Property(e => e.Grado)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.Imagen).IsUnicode(false);
             entity.Property(e => e.LastUpdate).HasColumnType("datetime");
+            entity.Property(e => e.Matricula)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.Nombre)
                 .HasMaxLength(200)
                 .IsUnicode(false);
             entity.Property(e => e.Password)
                 .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.Seccion)
+                .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.UserName)
                 .HasMaxLength(50)
