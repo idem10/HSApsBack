@@ -28,6 +28,19 @@ namespace HSAps.Controllers
                 return BadRequest();
             }
         }
+        [HttpGet]
+        public IActionResult GetLogin(string User, string Pwd, string App)
+        {
+            try
+            {
+                LoginClass login = new LoginClass() { User = User, Pwd = Pwd, App = App };
+                return Ok(_dsh.GetLogin(login));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         [HttpPost]
         public IActionResult SetNewUser([FromBody] MktUser user)
         {
