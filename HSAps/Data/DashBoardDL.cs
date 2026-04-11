@@ -175,7 +175,7 @@ namespace HSAps.Data
                                         .FirstOrDefault();
                 using (var insupt = _mkt)
                 {
-                    if (qry != null)
+                    if (qry == null)
                     {
                         insupt.DmHorarios.Add(hr);
                     }
