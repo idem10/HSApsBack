@@ -78,5 +78,28 @@ namespace HSAps.Business
                 throw;
             }
         }
+        //
+        public List<DmHorario> GetHorario(int id)
+        {
+            try
+            {
+                return _dsh.GetHorario(id);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public DmHorario SetHorario(DmHorario hr)
+        {
+            try
+            {
+                return _dsh.SetHorario(hr);
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

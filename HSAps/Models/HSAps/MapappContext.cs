@@ -17,6 +17,8 @@ public partial class MapappContext : DbContext
     {
     }
 
+    public virtual DbSet<DmHorario> DmHorarios { get; set; }
+
     public virtual DbSet<MktComment> MktComments { get; set; }
 
     public virtual DbSet<MktPost> MktPosts { get; set; }
@@ -27,8 +29,32 @@ public partial class MapappContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(con.GetConnectionString("MKT"));
 
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<DmHorario>(entity =>
+        {
+            entity.ToTable("DM_Horario");
+
+            entity.Property(e => e.Dia)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Edificio)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Eliminar).HasDefaultValue(0);
+            entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
+            entity.Property(e => e.Hora)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Materia)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Salon)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<MktComment>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__MKT_Comm__3214EC0795971BE9");

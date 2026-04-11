@@ -152,5 +152,50 @@ namespace HSAps.Data
                 throw;
             }
         }
+        public List<DmHorario> GetHorario(int id)
+        {
+            try
+            {
+                return _mkt.DmHorarios
+                                .Where(x => x.IdUser == id)
+                                    .ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        //
+        public DmHorario SetHorario(DmHorario hr)
+        {
+            try
+            {
+                var qry = _mkt.DmHorarios
+                                    .Where(x => x.Id == hr.Id)
+                                        .FirstOrDefault();
+                using (var insupt = _mkt)
+                {
+                    if (qry != null)
+                    {
+                        insupt.DmHorarios.Add(hr);
+                    }
+                    else
+                    {
+                        qry.Hora = hr.Hora;
+                        qry.Dia = hr.Dia;
+                        qry.Materia = hr.Materia;
+                        qry.Edificio = hr.Edificio;
+                        qry.Salon = hr.Salon;
+                        qry.Eliminar = hr.Eliminar;
+                    }
+                    insupt.SaveChanges();
+                }
+                return hr;
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

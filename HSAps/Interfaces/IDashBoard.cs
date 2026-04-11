@@ -15,5 +15,8 @@ namespace HSAps.Interfaces
         List<MktPostLike> GetPostLikes(int Id);
         //
         MktPost SetNewPost(MktPost post);
+        // dragon map
+        List<DmHorario> GetHorario(int id);
+        DmHorario SetHorario(DmHorario hr);
     }
 }
