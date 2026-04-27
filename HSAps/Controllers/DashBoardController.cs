@@ -120,5 +120,19 @@ namespace HSAps.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPost]
+        public IActionResult UpdateUserImage([FromBody] UpdateImageClass data)
+        {
+            try
+            {
+                return Ok(_dsh.UpdateUserImage(data));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }

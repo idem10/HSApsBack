@@ -197,5 +197,26 @@ namespace HSAps.Data
                 throw;
             }
         }
+
+        public MktUser UpdateUserImage(UpdateImageClass data)
+        {
+            try
+            {
+                var usr = _mkt.MktUsers
+                                .Where(x => x.UserName == data.UserName)
+                                    .FirstOrDefault();
+                if (usr != null)
+                {
+                    usr.Imagen = data.Imagen;
+                    _mkt.SaveChanges();
+                }
+                return usr;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
     }
 }

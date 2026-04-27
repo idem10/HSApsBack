@@ -101,5 +101,18 @@ namespace HSAps.Business
                 throw;
             }
         }
+
+        public MktUser UpdateUserImage(UpdateImageClass data)
+        {
+            try
+            {
+                return _dsh.UpdateUserImage(data);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
     }
 }

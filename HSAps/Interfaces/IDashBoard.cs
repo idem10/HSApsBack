@@ -18,5 +18,6 @@ namespace HSAps.Interfaces
         // dragon map
         List<DmHorario> GetHorario(int id);
         DmHorario SetHorario(DmHorario hr);
+        MktUser UpdateUserImage(UpdateImageClass data);
     }
 }
