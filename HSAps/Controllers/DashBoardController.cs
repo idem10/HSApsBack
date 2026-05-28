@@ -54,7 +54,7 @@ namespace HSAps.Controllers
             }
         }
         //
-        [HttpPost]
+        [HttpGet]
         public IActionResult GetTorneos()
         {
             try
