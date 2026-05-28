@@ -1,8 +1,8 @@
-﻿        namespace HSAps.Models
+﻿namespace HSAps.Models
+{
+    public class UpdateImageClass
     {
-        public class UpdateImageClass
-        {
-            public string UserName { get; set; }
-            public string Imagen { get; set; }
-        }
+        public string UserName { get; set; }
+        public string Imagen { get; set; }
     }
+}

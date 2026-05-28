@@ -32,6 +32,18 @@ namespace HSAps.Business
                 throw;
             }
         }
+        //torneo
+        public List<TurTorneo> GetTorneos()
+        {
+            try
+            {
+                return _dsh.GetTorneos();
+            }
+            catch
+            {
+                throw;
+            }
+        }
         //
         public List<PostAllDataClass> GetAllPost()
         {

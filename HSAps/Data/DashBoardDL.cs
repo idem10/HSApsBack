@@ -1,6 +1,7 @@
 ﻿using HSAps.Interfaces;
 using HSAps.Models;
 using HSAps.Models.HSAps;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HSAps.Data
 {
@@ -67,6 +68,21 @@ namespace HSAps.Data
                 throw;
             }
         }
+        //torneo
+        public List<TurTorneo> GetTorneos()
+        {
+            try
+            {
+                return _mkt.TurTorneos
+                                .Where(x => x.Eliminado == 0 && x.Terminado == 0)
+                                    .ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         //
         public List<MktPost> GetAllPost()
         {

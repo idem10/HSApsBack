@@ -53,10 +53,25 @@ namespace HSAps.Controllers
                 return BadRequest();
             }
         }
+        //
+        [HttpPost]
+        public IActionResult GetTorneos()
+        {
+            try
+            {
+                return Ok(_dsh.GetTorneos());
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        //
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
+
         [HttpGet]
         public IActionResult GetAllPost()
         {

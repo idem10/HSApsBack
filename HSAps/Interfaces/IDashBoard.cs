@@ -8,6 +8,8 @@ namespace HSAps.Interfaces
         //
         MktUserClass GetLogin(LoginClass login);
         MktUser SetNewUser(MktUser user);
+        //torneos
+        List<TurTorneo> GetTorneos();
         //
         List<MktPost> GetAllPost();
         MktUser GetUser(int Id);

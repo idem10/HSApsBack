@@ -27,8 +27,9 @@ public partial class MapappContext : DbContext
 
     public virtual DbSet<MktUser> MktUsers { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(con.GetConnectionString("MKT"));
+    public virtual DbSet<TurTorneo> TurTorneos { get; set; }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(con.GetConnectionString("MKT"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -120,6 +121,17 @@ public partial class MapappContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.UserName)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<TurTorneo>(entity =>
+        {
+            entity.ToTable("TUR_TORNEOS");
+
+            entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
+            entity.Property(e => e.FechaInicio).HasColumnType("datetime");
+            entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
                 .IsUnicode(false);
         });
