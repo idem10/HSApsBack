@@ -27,6 +27,12 @@ public partial class MapappContext : DbContext
 
     public virtual DbSet<MktUser> MktUsers { get; set; }
 
+    public virtual DbSet<TurEquipo> TurEquipos { get; set; }
+
+    public virtual DbSet<TurEquipoApuestum> TurEquipoApuesta { get; set; }
+
+    public virtual DbSet<TurListaTorneo> TurListaTorneos { get; set; }
+
     public virtual DbSet<TurTorneo> TurTorneos { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(con.GetConnectionString("MKT"));
@@ -122,6 +128,46 @@ public partial class MapappContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.UserName)
                 .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<TurEquipo>(entity =>
+        {
+            entity.ToTable("TUR_EQUIPOS");
+
+            entity.Property(e => e.Code)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+            entity.Property(e => e.Equipo)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.Flag)
+                .HasMaxLength(250)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<TurEquipoApuestum>(entity =>
+        {
+            entity.ToTable("TUR_EQUIPO_APUESTA");
+
+            entity.Property(e => e.Apuesta).HasColumnType("decimal(18, 4)");
+        });
+
+        modelBuilder.Entity<TurListaTorneo>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_TUR_TORNEOS2");
+
+            entity.ToTable("TUR_LISTA_TORNEOS");
+
+            entity.Property(e => e.Apuesta).HasColumnType("decimal(18, 4)");
+            entity.Property(e => e.Nombre)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.NumeroEquipos)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Ubicacion)
+                .HasMaxLength(100)
                 .IsUnicode(false);
         });
 

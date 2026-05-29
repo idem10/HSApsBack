@@ -10,6 +10,7 @@ namespace HSAps.Interfaces
         MktUser SetNewUser(MktUser user);
         //torneos
         List<TurTorneo> GetTorneos();
+        List<TurEquipo> GetEquipos();
         //
         List<MktPost> GetAllPost();
         MktUser GetUser(int Id);

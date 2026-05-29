@@ -82,7 +82,17 @@ namespace HSAps.Data
                 throw;
             }
         }
-
+        public List<TurEquipo> GetEquipos()
+        {
+            try
+            {
+                return _mkt.TurEquipos.ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
         //
         public List<MktPost> GetAllPost()
         {

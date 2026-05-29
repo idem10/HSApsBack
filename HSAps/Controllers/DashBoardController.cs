@@ -66,6 +66,21 @@ namespace HSAps.Controllers
                 throw;
             }
         }
+        [HttpGet]
+        public IActionResult GetEquipos()
+        {
+            try
+            {
+                return Ok(_dsh.GetEquipos());
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        ////
+        ///
+        ///
         //
         /// <summary>
         /// 

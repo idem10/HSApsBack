@@ -44,6 +44,17 @@ namespace HSAps.Business
                 throw;
             }
         }
+        public List<TurEquipo> GetEquipos()
+        {
+            try
+            {
+                return _dsh.GetEquipos();
+            }
+            catch
+            {
+                throw;
+            }
+        }
         //
         public List<PostAllDataClass> GetAllPost()
         {
