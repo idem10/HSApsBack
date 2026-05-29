@@ -44,6 +44,17 @@ namespace HSAps.Business
                 throw;
             }
         }
+        public TurListaTorneo SetListaTorneo(TurListaTorneo tl)
+        {
+            try
+            {
+                return _dsh.SetListaTorneo(tl);
+            }
+            catch
+            {
+                throw;
+            }
+        }
         public List<TurEquipo> GetEquipos()
         {
             try

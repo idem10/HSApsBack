@@ -66,6 +66,18 @@ namespace HSAps.Controllers
                 throw;
             }
         }
+        [HttpPost]
+        public IActionResult SetListaTorneo([FromBody]TurListaTorneo listaTorneo)
+        {
+            try
+            {
+                return Ok(_dsh.SetListaTorneo());
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
         [HttpGet]
         public IActionResult GetEquipos()
         {

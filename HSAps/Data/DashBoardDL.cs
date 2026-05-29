@@ -82,6 +82,38 @@ namespace HSAps.Data
                 throw;
             }
         }
+        public TurListaTorneo SetListaTorneo(TurListaTorneo tl)
+        {
+            try
+            {
+                var qry = _mkt.TurListaTorneos
+                                .Where(x => x.Id == tl.Id)
+                                    .FirstOrDefault();
+                using (var insupt = _mkt)
+                {
+                    if (qry == null)
+                    {
+                        insupt.TurListaTorneos.Add(tl);
+                    }
+                    else
+                    {
+                        qry.IdTorneo = tl.IdTorneo;
+                        qry.Nombre = tl.Nombre;
+                        qry.Ubicacion = tl.Ubicacion;
+                        qry.NumeroEquipos = tl.NumeroEquipos;
+                        qry.Apuesta = tl.Apuesta;
+                        qry.Eliminado = tl.Eliminado;
+                        qry.Owner = tl.Owner;
+                    }
+                    insupt.SaveChanges();
+                }
+                return tl;
+            }
+            catch
+            {
+                throw;
+            }
+        }
         public List<TurEquipo> GetEquipos()
         {
             try

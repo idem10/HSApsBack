@@ -11,6 +11,7 @@ namespace HSAps.Interfaces
         //torneos
         List<TurTorneo> GetTorneos();
         List<TurEquipo> GetEquipos();
+        TurListaTorneo SetListaTorneo(TurListaTorneo tl);
         //
         List<MktPost> GetAllPost();
         MktUser GetUser(int Id);
