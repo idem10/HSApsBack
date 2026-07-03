@@ -67,11 +67,11 @@ namespace HSAps.Controllers
             }
         }
         [HttpPost]
-        public IActionResult SetListaTorneo([FromBody]TurListaTorneo listaTorneo)
+        public IActionResult SetListaTorneo([FromBody] TurListaTorneo listaTorneo)
         {
             try
             {
-                return Ok(_dsh.SetListaTorneo());
+                return Ok("");// _dsh.SetListaTorneo());
             }
             catch
             {
