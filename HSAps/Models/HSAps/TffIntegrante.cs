@@ -24,4 +24,6 @@ public partial class TffIntegrante
     public string? Direccion { get; set; }
 
     public DateTime FechaIngreso { get; set; }
+
+    public string? Imagen { get; set; }
 }

@@ -23,6 +23,7 @@ namespace HSAps.Models
         public string? Direccion { get; set; }
 
         public DateTime FechaIngreso { get; set; }
+        public string? Imagen { get; set; }
         //asistencia
         public DateTime UltimoRegistro { get; set; }
         public List<TffAsistencium> Asistencias { get; set; }

@@ -32,6 +32,7 @@ namespace HSAps.Business
                         Email = d.Email,
                         Direccion = d.Direccion,
                         FechaIngreso = d.FechaIngreso,
+                        Imagen = d.Imagen,
                         UltimoRegistro = asistencia.OrderByDescending(x => x.Id).Select(x => x.FechaRegistro).FirstOrDefault(),
                         Asistencias = asistencia,
                         UltimoPago = pago.OrderByDescending(x => x.Id).Select(x => x.FechaPago).FirstOrDefault(),
@@ -39,6 +40,76 @@ namespace HSAps.Business
                     });
                 });
                 return tdbc;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        //
+        public TffIntegrante SetIntegrante(TffIntegrante ni)
+        {
+            try
+            {
+                return _tff.SetIntegrante(ni);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public TffPago SetPago(TffPago pago)
+        {
+            try
+            {
+                return _tff.SetPago(pago);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public TffAsistencium SetAsistencia(TffAsistencium asis)
+        {
+            try
+            {
+                return _tff.SetAsistencia(asis);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        //
+        public TffIntegrante DelIntegrante(TffIntegrante ni)
+        {
+            try
+            {
+                return _tff.DelIntegrante(ni);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public TffPago DelPago(TffPago pago)
+        {
+            try
+            {
+                return _tff.DelPago(pago);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public TffAsistencium DelAsistencia(TffAsistencium asis)
+        {
+            try
+            {
+                return _tff.DelAsistencia(asis);
             }
             catch
             {

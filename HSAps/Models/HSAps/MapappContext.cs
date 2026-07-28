@@ -399,6 +399,7 @@ public partial class MapappContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Fecha).HasColumnType("datetime");
             entity.Property(e => e.FechaIngreso).HasColumnType("datetime");
+            entity.Property(e => e.Imagen).IsUnicode(false);
             entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
                 .IsUnicode(false);
