@@ -69,6 +69,7 @@ namespace HSAps.Data
                         qry.Email = ni.Email;
                         qry.Direccion = ni.Direccion;
                         qry.FechaIngreso = ni.FechaIngreso;
+                        qry.Imagen = ni.Imagen;
                     }
                     insupt.SaveChanges();
                 }
