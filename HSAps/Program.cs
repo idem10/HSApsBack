@@ -1,3 +1,4 @@
+using HSAps.Business;
 using HSAps.Data;
 using HSAps.Interfaces;
 using HSAps.Models;
@@ -14,6 +15,7 @@ IConfiguration configuration = builder.Configuration;
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddScoped<IDashBoard, DashBoardDL>();
+builder.Services.AddScoped<ITrollsFlagsFootball, TrollsFlagsFootballDL>();
 builder.Services.AddCors(op => op.AddPolicy("AllowAll", policy =>
 {
     policy.AllowAnyMethod()
