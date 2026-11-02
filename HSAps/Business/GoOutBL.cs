@@ -41,7 +41,7 @@ namespace HSAps.Business
                         CreatedAt = x.CreatedAt,
                         UpdatedAt = x.UpdatedAt,
                         Latitude = (decimal)(locations.Count > 0 ? locations.Where(l => l.PlaceId == x.PlaceId).FirstOrDefault()?.Latitude : 0),
-                        Longitude = (decimal)(locations.Count > 0 ? locations.Where(l => l.PlaceId == x.PlaceId).FirstOrDefault()?.Longitude : 0),,
+                        Longitude = (decimal)(locations.Count > 0 ? locations.Where(l => l.PlaceId == x.PlaceId).FirstOrDefault()?.Longitude : 0),
                         ImageUrl = imagenes.Count > 0 ? imagenes.Where(i => i.PlaceId == x.PlaceId).FirstOrDefault()?.ImageUrl : ""
                     });
                 });
