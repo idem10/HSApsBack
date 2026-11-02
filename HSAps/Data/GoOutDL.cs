@@ -53,5 +53,27 @@ namespace HSAps.Data
                 throw;
             }
         }
+        public List<PlaceLocation> GetPlaceLocations()
+        {
+            try
+            {
+                return _spk.PlaceLocations.ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public List<PlacePhoto> GetPlacePhotos()
+        {
+            try
+            {
+                return _spk.PlacePhotos.ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

@@ -8,5 +8,7 @@ namespace HSAps.Interfaces
         List<Category> GetCategorias();
         List<Cuisine> GetTipos();
         List<PriceLevel> GetPrecios();
+        List<PlaceLocation> GetPlaceLocations();
+        List<PlacePhoto> GetPlacePhotos();
     }
 }

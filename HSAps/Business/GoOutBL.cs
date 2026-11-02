@@ -14,6 +14,11 @@ namespace HSAps.Business
             try
             {
                 var places = _go.GetPlaces();
+                var categorias = _go.GetCategorias();
+                var tipos = _go.GetTipos();
+                var precios = _go.GetPrecios();
+                var locations = _go.GetPlaceLocations();
+                var imagenes = _go.GetPlacePhotos();
                 places.ForEach(x =>
                 {
                     pc.Add(new PlaceClass
@@ -21,11 +26,11 @@ namespace HSAps.Business
                         PlaceId = x.PlaceId,
                         Name = x.Name,
                         CategoryId = x.CategoryId,
-                        Categoria = "",
+                        Categoria = categorias.Count > 0 ? categorias.Where(c => c.CategoryId == x.CategoryId).FirstOrDefault()?.Name : "",
                         CuisineId = x.CuisineId,
-                        Tipo = "",
+                        Tipo = tipos.Count > 0 ? tipos.Where(t => t.CuisineId == x.CategoryId).FirstOrDefault()?.Name : "",
                         PriceLevelId = x.PriceLevelId,
-                        Precio = "",
+                        Precio = precios.Count > 0 ? precios.Where(p => p.PriceLevelId == x.PriceLevelId).FirstOrDefault()?.Name : "",
                         Emoji = x.Emoji,
                         Color = x.Color,
                         Description = x.Description,
@@ -35,6 +40,9 @@ namespace HSAps.Business
                         IsVerified = x.IsVerified,
                         CreatedAt = x.CreatedAt,
                         UpdatedAt = x.UpdatedAt,
+                        Latitude = (decimal)(locations.Count > 0 ? locations.Where(l => l.PlaceId == x.PlaceId).FirstOrDefault()?.Latitude : 0),
+                        Longitude = (decimal)(locations.Count > 0 ? locations.Where(l => l.PlaceId == x.PlaceId).FirstOrDefault()?.Longitude : 0),,
+                        ImageUrl = imagenes.Count > 0 ? imagenes.Where(i => i.PlaceId == x.PlaceId).FirstOrDefault()?.ImageUrl : ""
                     });
                 });
                 return pc;
