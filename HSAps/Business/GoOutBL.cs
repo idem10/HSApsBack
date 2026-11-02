@@ -28,7 +28,7 @@ namespace HSAps.Business
                         CategoryId = x.CategoryId,
                         Categoria = categorias.Count > 0 ? categorias.Where(c => c.CategoryId == x.CategoryId).FirstOrDefault()?.Name : "",
                         CuisineId = x.CuisineId,
-                        Tipo = tipos.Count > 0 ? tipos.Where(t => t.CuisineId == x.CategoryId).FirstOrDefault()?.Name : "",
+                        Tipo = tipos.Count > 0 ? tipos.Where(t => t.CuisineId == x.CuisineId).FirstOrDefault()?.Name : "",
                         PriceLevelId = x.PriceLevelId,
                         Precio = precios.Count > 0 ? precios.Where(p => p.PriceLevelId == x.PriceLevelId).FirstOrDefault()?.Name : "",
                         Emoji = x.Emoji,
