@@ -16,6 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddScoped<IDashBoard, DashBoardDL>();
 builder.Services.AddScoped<ITrollsFlagsFootball, TrollsFlagsFootballDL>();
+builder.Services.AddScoped<IGoOut, GoOutDL>();
 builder.Services.AddCors(op => op.AddPolicy("AllowAll", policy =>
 {
     policy.AllowAnyMethod()
