@@ -33,6 +33,7 @@
 
         public decimal Longitude { get; set; }
         public string ImageUrl { get; set; } = null!;
+        public string Area { get; set; } = null!;
     }
 
 }
