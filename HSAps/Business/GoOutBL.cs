@@ -53,5 +53,16 @@ namespace HSAps.Business
                 throw;
             }
         }
+        public List<Category> GetCategorias()
+        {
+            try
+            {
+                return _go.GetCategorias();
+            }
+            catch
+            {
+                return new List<Category>();
+            }
+        }
     }
 }

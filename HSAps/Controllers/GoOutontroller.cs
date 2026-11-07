@@ -1,5 +1,6 @@
 ﻿using HSAps.Business;
 using HSAps.Interfaces;
+using HSAps.Models.HSAps;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HSAps.Controllers
@@ -20,6 +21,18 @@ namespace HSAps.Controllers
             try
             {
                 return Ok(_go.GetGoOut());
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPost]
+        public IActionResult GetCategorias()
+        {
+            try
+            {
+                return Ok(_go.GetCategorias());
             }
             catch
             {
