@@ -27,7 +27,7 @@ namespace HSAps.Controllers
                 return BadRequest();
             }
         }
-        [HttpPost]
+        [HttpGet]
         public IActionResult GetCategorias()
         {
             try
