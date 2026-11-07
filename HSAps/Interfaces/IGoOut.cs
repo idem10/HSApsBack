@@ -10,5 +10,6 @@ namespace HSAps.Interfaces
         List<PriceLevel> GetPrecios();
         List<PlaceLocation> GetPlaceLocations();
         List<PlacePhoto> GetPlacePhotos();
+        User GetUser(User u);
     }
 }

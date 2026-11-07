@@ -39,5 +39,22 @@ namespace HSAps.Controllers
                 return BadRequest();
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="u"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult GetUser([FromBody]User u)
+        {
+            try
+            {
+                return Ok(_go.GetUser(u));
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
     }
 }

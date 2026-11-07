@@ -116,7 +116,7 @@ public partial class SparkRContext : DbContext
             entity.HasKey(e => e.PhotoId).HasName("PK__PlacePho__21B7B5E26DE92751");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(sysutcdatetime())");
-            entity.Property(e => e.ImageUrl).HasMaxLength(1000);
+            entity.Property(e => e.ImageUrl).IsUnicode(false);
         });
 
         modelBuilder.Entity<PriceLevel>(entity =>

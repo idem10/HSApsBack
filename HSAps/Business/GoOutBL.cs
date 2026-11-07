@@ -64,5 +64,16 @@ namespace HSAps.Business
                 return new List<Category>();
             }
         }
+        public User GetUser(User u)
+        {
+            try
+            {
+                return _go.GetUser(u);
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

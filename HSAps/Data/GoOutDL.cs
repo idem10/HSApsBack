@@ -75,5 +75,21 @@ namespace HSAps.Data
                 throw;
             }
         }
+
+        //login
+        public User GetUser(User u)
+        {
+            try
+            {
+                return _spk.Users
+                                .Where(x => x.Email == u.Email
+                                        && x.PasswordHash == u.PasswordHash)
+                                    .FirstOrDefault();
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }
